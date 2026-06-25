@@ -170,7 +170,17 @@ __SCHEMA__
     <nav>
      <ul class="nav-menu">
       <li><a class="nav-link" href="__PREFIX__">Home</a></li>
-      <li><a class="nav-link" href="__PREFIX__services/">Services</a></li>
+      <li class="has-dropdown">
+       <a class="nav-link" href="__PREFIX__services/">Services <i class="fas fa-chevron-down" style="margin-left: 4px; font-size: 0.75rem;"></i></a>
+       <ul class="dropdown-menu">
+        <li><a href="__PREFIX__tree-removal/">Tree Removal</a></li>
+        <li><a href="__PREFIX__tree-trimming/">Tree Trimming</a></li>
+        <li><a href="__PREFIX__stump-removal-grinding/">Stump Removal &amp; Grinding</a></li>
+        <li><a href="__PREFIX__cabling-bracing/">Tree Cabling &amp; Bracing</a></li>
+        <li><a href="__PREFIX__shrub-removal/">Shrub Removal</a></li>
+        <li><a href="__PREFIX__emergency-tree-services/">Emergency Services</a></li>
+       </ul>
+      </li>
       <li><a class="nav-link" href="__PREFIX__about/">About</a></li>
       <li><a class="nav-link" href="__PREFIX__contact/">Contact</a></li>
      </ul>
@@ -193,7 +203,20 @@ __SCHEMA__
    <!-- Mobile Slide-out Menu -->
    <div class="mobile-nav-menu">
     <a class="mobile-nav-link" href="__PREFIX__">Home</a>
-    <a class="mobile-nav-link" href="__PREFIX__services/">Services</a>
+    <div class="mobile-nav-dropdown">
+     <a class="mobile-nav-link" href="#" style="display: flex; justify-content: space-between; align-items: center;">
+      Services <i class="fas fa-chevron-down" style="font-size: 0.9rem;"></i>
+     </a>
+     <div class="mobile-dropdown-content">
+      <a class="mobile-sub-link" href="__PREFIX__services/">All Services</a>
+      <a class="mobile-sub-link" href="__PREFIX__tree-removal/">Tree Removal</a>
+      <a class="mobile-sub-link" href="__PREFIX__tree-trimming/">Tree Trimming</a>
+      <a class="mobile-sub-link" href="__PREFIX__stump-removal-grinding/">Stump Removal &amp; Grinding</a>
+      <a class="mobile-sub-link" href="__PREFIX__cabling-bracing/">Tree Cabling &amp; Bracing</a>
+      <a class="mobile-sub-link" href="__PREFIX__shrub-removal/">Shrub Removal</a>
+      <a class="mobile-sub-link" href="__PREFIX__emergency-tree-services/">Emergency Services</a>
+     </div>
+    </div>
     <a class="mobile-nav-link" href="__PREFIX__about/">About</a>
     <a class="mobile-nav-link" href="__PREFIX__contact/">Contact</a>
     <div class="mobile-nav-cta">
@@ -276,9 +299,30 @@ __MAIN_CONTENT__
        var mobileLinks = mobileMenu.querySelectorAll('a');
        mobileLinks.forEach(function(link) {
          link.addEventListener('click', function() {
+           if (link.closest('.mobile-nav-dropdown') && link.getAttribute('href') === '#') {
+             return;
+           }
            mobileMenu.classList.remove('open');
            mobileToggle.classList.remove('open');
          });
+       });
+     }
+     
+     // Mobile Dropdown Toggle
+     var mobileDropdown = document.querySelector('.mobile-nav-dropdown .mobile-nav-link');
+     var mobileDropdownContent = document.querySelector('.mobile-dropdown-content');
+     if (mobileDropdown && mobileDropdownContent) {
+       mobileDropdown.addEventListener('click', function(e) {
+         e.preventDefault();
+         var isOpen = mobileDropdownContent.classList.contains('open');
+         var icon = mobileDropdown.querySelector('i');
+         if (isOpen) {
+           mobileDropdownContent.classList.remove('open');
+           if (icon) icon.style.transform = 'rotate(0deg)';
+         } else {
+           mobileDropdownContent.classList.add('open');
+           if (icon) icon.style.transform = 'rotate(180deg)';
+         }
        });
      }
      
@@ -349,7 +393,17 @@ __SCHEMA__
     <nav>
      <ul class="nav-menu">
       <li><a class="nav-link active" href="/">Home</a></li>
-      <li><a class="nav-link" href="/services/">Services</a></li>
+      <li class="has-dropdown">
+       <a class="nav-link" href="/services/">Services <i class="fas fa-chevron-down" style="margin-left: 4px; font-size: 0.75rem;"></i></a>
+       <ul class="dropdown-menu">
+        <li><a href="/tree-removal/">Tree Removal</a></li>
+        <li><a href="/tree-trimming/">Tree Trimming</a></li>
+        <li><a href="/stump-removal-grinding/">Stump Removal &amp; Grinding</a></li>
+        <li><a href="/cabling-bracing/">Tree Cabling &amp; Bracing</a></li>
+        <li><a href="/shrub-removal/">Shrub Removal</a></li>
+        <li><a href="/emergency-tree-services/">Emergency Services</a></li>
+       </ul>
+      </li>
       <li><a class="nav-link" href="/about/">About</a></li>
       <li><a class="nav-link" href="/contact/">Contact</a></li>
      </ul>
@@ -372,7 +426,20 @@ __SCHEMA__
    <!-- Mobile Slide-out Menu -->
    <div class="mobile-nav-menu">
     <a class="mobile-nav-link" href="/">Home</a>
-    <a class="mobile-nav-link" href="/services/">Services</a>
+    <div class="mobile-nav-dropdown">
+     <a class="mobile-nav-link" href="#" style="display: flex; justify-content: space-between; align-items: center;">
+      Services <i class="fas fa-chevron-down" style="font-size: 0.9rem;"></i>
+     </a>
+     <div class="mobile-dropdown-content">
+      <a class="mobile-sub-link" href="/services/">All Services</a>
+      <a class="mobile-sub-link" href="/tree-removal/">Tree Removal</a>
+      <a class="mobile-sub-link" href="/tree-trimming/">Tree Trimming</a>
+      <a class="mobile-sub-link" href="/stump-removal-grinding/">Stump Removal &amp; Grinding</a>
+      <a class="mobile-sub-link" href="/cabling-bracing/">Tree Cabling &amp; Bracing</a>
+      <a class="mobile-sub-link" href="/shrub-removal/">Shrub Removal</a>
+      <a class="mobile-sub-link" href="/emergency-tree-services/">Emergency Services</a>
+     </div>
+    </div>
     <a class="mobile-nav-link" href="/about/">About</a>
     <a class="mobile-nav-link" href="/contact/">Contact</a>
     <div class="mobile-nav-cta">
@@ -693,9 +760,30 @@ __FAQS__
        var mobileLinks = mobileMenu.querySelectorAll('a');
        mobileLinks.forEach(function(link) {
          link.addEventListener('click', function() {
+           if (link.closest('.mobile-nav-dropdown') && link.getAttribute('href') === '#') {
+             return;
+           }
            mobileMenu.classList.remove('open');
            mobileToggle.classList.remove('open');
          });
+       });
+     }
+     
+     // Mobile Dropdown Toggle
+     var mobileDropdown = document.querySelector('.mobile-nav-dropdown .mobile-nav-link');
+     var mobileDropdownContent = document.querySelector('.mobile-dropdown-content');
+     if (mobileDropdown && mobileDropdownContent) {
+       mobileDropdown.addEventListener('click', function(e) {
+         e.preventDefault();
+         var isOpen = mobileDropdownContent.classList.contains('open');
+         var icon = mobileDropdown.querySelector('i');
+         if (isOpen) {
+           mobileDropdownContent.classList.remove('open');
+           if (icon) icon.style.transform = 'rotate(0deg)';
+         } else {
+           mobileDropdownContent.classList.add('open');
+           if (icon) icon.style.transform = 'rotate(180deg)';
+         }
        });
      }
      
@@ -937,6 +1025,8 @@ def redesign_homepage(original_path, output_path):
 
 def redesign_subpage(original_path, prefix, is_contact=False, is_privacy=False):
     print(f"Redesigning Subpage: {original_path}")
+    # Restore original file first from git to extract the content
+    # Note: we need to run git checkout 925a513 on the file before opening it, but we already did checkout
     with open(original_path, 'r', encoding='utf-8') as f:
         soup = BeautifulSoup(f.read(), 'html.parser')
         
@@ -1049,10 +1139,10 @@ def redesign_subpage(original_path, prefix, is_contact=False, is_privacy=False):
        <p style="font-size: 0.95rem; color: rgba(255,255,255,0.85); margin-bottom: var(--spacing-sm);">
         Contact our arborist team now for a free, no-obligation quote.
        </p>
-       <a class="btn btn-primary btn-block" href="tel:208-417-7993" style="margin-bottom: var(--spacing-xs);">
+       <a class="btn btn-primary" href="tel:208-417-7993" style="margin-bottom: var(--spacing-xs);">
         <i class="fas fa-phone-alt" style="margin-right: 8px;"></i>208-417-7993
        </a>
-       <a class="btn btn-secondary btn-block" href="{prefix}contact/" style="border-color: var(--color-white); color: var(--color-white);">
+       <a class="btn btn-secondary" href="{prefix}contact/" style="border-color: var(--color-white); color: var(--color-white);">
         Contact Form
        </a>
       </div>
@@ -1091,8 +1181,6 @@ def run_redesign():
     
     # 1. Homepage
     homepage_path = os.path.join(root_dir, "index.html")
-    # Backup original before overwriting if needed, but we already have git checkout
-    # Redesign homepage in-place
     redesign_homepage(homepage_path, homepage_path)
     
     # 2. Subpages
