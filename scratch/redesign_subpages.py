@@ -175,7 +175,7 @@ __MAIN_CONTENT__
      <h4>Contact Us</h4>
      <p><i class="fas fa-phone-alt"></i>208-417-7993</p>
      <p><i class="fas fa-envelope"></i>info@treeservicepocatelloidaho.com</p>
-     <p><i class="fas fa-map-marker-alt"></i>Pocatello, ID (Service Area Business)</p>
+     <p><i class="fas fa-map-marker-alt"></i>Pocatello, ID</p>
     </div>
    </div>
    
@@ -275,7 +275,7 @@ def redesign_file(file_path, rel_path_prefix, is_contact=False, is_privacy=False
       <div style="margin: var(--spacing-md) 0;">
        <p style="font-weight: 600;"><i class="fas fa-phone-alt" style="color: var(--color-primary); margin-right: 8px;"></i> 208-417-7993</p>
        <p style="font-weight: 600;"><i class="fas fa-envelope" style="color: var(--color-primary); margin-right: 8px;"></i> info@treeservicepocatelloidaho.com</p>
-       <p style="font-weight: 600;"><i class="fas fa-map-marker-alt" style="color: var(--color-primary); margin-right: 8px;"></i> Pocatello, ID (Service Area Business)</p>
+       <p style="font-weight: 600;"><i class="fas fa-map-marker-alt" style="color: var(--color-primary); margin-right: 8px;"></i> Pocatello, ID</p>
        <p style="font-weight: 600;"><i class="fas fa-clock" style="color: var(--color-primary); margin-right: 8px;"></i> Mon - Sat: 9:00 AM - 8:00 PM</p>
       </div>
       
