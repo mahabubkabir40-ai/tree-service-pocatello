@@ -265,11 +265,8 @@ __MAIN_CONTENT__
    
    <div class="container footer-bottom">
     <p>&copy; 2026 Pocatello Tree Service. All Rights Reserved.</p>
-    <div style="display: flex; gap: var(--spacing-sm);">
-     <a href="__PREFIX__chubbuck-idaho/">Chubbuck</a> | 
-     <a href="__PREFIX__blackfoot-idaho/">Blackfoot</a> | 
-     <a href="__PREFIX__tree-service-caldwell-idaho/">Caldwell</a> | 
-     <a href="__PREFIX__tree-service-twin-falls/">Twin Falls</a>
+    <div style="display: flex; gap: var(--spacing-sm); color: var(--color-text-muted);">
+     Serving all neighborhoods in Pocatello, Idaho
     </div>
    </div>
   </footer>
@@ -597,7 +594,7 @@ __ABOUT_POCATELLO_PARAGRAPHS__
        <i class="fas fa-phone-alt" style="color: var(--color-primary);"></i> 208-417-7993
       </a>
       <p style="font-size: 0.9rem; color: rgba(255,255,255,0.75); margin-top: var(--spacing-md); margin-bottom: 0;">
-       *Serving Pocatello, Chubbuck, Blackfoot, and surrounding Southeast Idaho communities.
+       *Serving the entire Pocatello, Idaho area.
       </p>
      </div>
     </section>
@@ -667,11 +664,8 @@ __FAQS__
    
    <div class="container footer-bottom">
     <p>&copy; 2026 Pocatello Tree Service. All Rights Reserved.</p>
-    <div style="display: flex; gap: var(--spacing-sm);">
-     <a href="/chubbuck-idaho/">Chubbuck</a> | 
-     <a href="/blackfoot-idaho/">Blackfoot</a> | 
-     <a href="/tree-service-caldwell-idaho/">Caldwell</a> | 
-     <a href="/tree-service-twin-falls/">Twin Falls</a>
+    <div style="display: flex; gap: var(--spacing-sm); color: var(--color-text-muted);">
+     Serving all neighborhoods in Pocatello, Idaho
     </div>
    </div>
   </footer>
@@ -912,8 +906,7 @@ def redesign_homepage(original_path, output_path):
         ("Highland", "Highland:"),
         ("University Area", "University Area:"),
         ("Indian Hills", "Indian Hills:"),
-        ("Johnny Creek", "Johnny Creek:"),
-        ("Chubbuck & Beyond", "Chubbuck & Beyond:")
+        ("Johnny Creek", "Johnny Creek:")
     ]
     for n_name, n_term in neighborhoods:
         n_p = content_area.find(lambda t: t.name == 'p' and n_term in t.text)
@@ -999,7 +992,7 @@ def redesign_subpage(original_path, prefix, is_contact=False, is_privacy=False):
      <!-- Contact Info & Map -->
      <div>
       <h2>Get In Touch</h2>
-      <p>We are a fully mobile tree service business serving Pocatello, Chubbuck, Blackfoot, and surrounding Southeast Idaho communities.</p>
+      <p>We are a fully mobile tree service business serving Pocatello, Idaho.</p>
       
       <div style="margin: var(--spacing-md) 0;">
        <p style="font-weight: 600;"><i class="fas fa-phone-alt" style="color: var(--color-primary); margin-right: 8px;"></i> 208-417-7993</p>
@@ -1116,10 +1109,6 @@ def run_redesign():
         ("emergency-tree-services/index.html", "../", False, False),
         ("about/index.html", "../", False, False),
         ("services/index.html", "../", False, False),
-        ("chubbuck-idaho/index.html", "../", False, False),
-        ("blackfoot-idaho/index.html", "../", False, False),
-        ("tree-service-caldwell-idaho/index.html", "../", False, False),
-        ("tree-service-twin-falls/index.html", "../", False, False),
         ("privacy-policy/index.html", "../", False, True),
         ("contact/index.html", "../", True, False)
     ]

@@ -27,10 +27,6 @@ def verify_site():
         ("emergency-tree-services/index.html", "../index.css"),
         ("about/index.html", "../index.css"),
         ("services/index.html", "../index.css"),
-        ("chubbuck-idaho/index.html", "../index.css"),
-        ("blackfoot-idaho/index.html", "../index.css"),
-        ("tree-service-caldwell-idaho/index.html", "../index.css"),
-        ("tree-service-twin-falls/index.html", "../index.css"),
         ("privacy-policy/index.html", "../index.css"),
         ("contact/index.html", "../index.css")
     ]

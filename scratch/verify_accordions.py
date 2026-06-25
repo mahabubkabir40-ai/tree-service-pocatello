@@ -18,11 +18,7 @@ def verify_files():
     root_dir = r"c:\Users\USER\Desktop\Tree Service Pocatello"
     modified_files = [
         "index.html",
-        "blackfoot-idaho/index.html",
-        "chubbuck-idaho/index.html",
-        "tree-removal/index.html",
-        "tree-service-caldwell-idaho/index.html",
-        "tree-service-twin-falls/index.html"
+        "tree-removal/index.html"
     ]
     
     for relative_path in modified_files:
