@@ -190,14 +190,15 @@
      <a href="../chubbuck-idaho/">Chubbuck</a> | 
      <a href="../blackfoot-idaho/">Blackfoot</a> | 
      <a href="../tree-service-caldwell-idaho/">Caldwell</a> | 
-     <a href="../tree-service-twin-falls/">Tree Service Twin Falls</a>
+     <a href="../tree-service-twin-falls/">Twin Falls</a>
     </div>
    </div>
   </footer>
 
-  <!-- Script for Mobile Navigation Menu -->
+  <!-- Script for Mobile Navigation Menu & Accordions -->
   <script>
    document.addEventListener('DOMContentLoaded', function() {
+     // Mobile Navigation Menu Toggle
      var mobileToggle = document.querySelector('.mobile-nav-toggle');
      var mobileMenu = document.querySelector('.mobile-nav-menu');
      
@@ -212,7 +213,44 @@
            mobileToggle.classList.add('open');
          }
        });
+       
+       // Close menu when clicking links
+       var mobileLinks = mobileMenu.querySelectorAll('a');
+       mobileLinks.forEach(function(link) {
+         link.addEventListener('click', function() {
+           mobileMenu.classList.remove('open');
+           mobileToggle.classList.remove('open');
+         });
+       });
      }
+     
+     // Accordion Logic
+     var accTitles = document.querySelectorAll('.accordion-title');
+     accTitles.forEach(function(title) {
+       title.addEventListener('click', function(e) {
+         e.preventDefault();
+         var isExpanded = title.getAttribute('aria-expanded') === 'true';
+         var newState = !isExpanded;
+         
+         title.setAttribute('aria-expanded', newState ? 'true' : 'false');
+         
+         var content = title.nextElementSibling;
+         if (content && content.classList.contains('accordion-content')) {
+           if (newState) {
+             content.style.display = 'block';
+           } else {
+             content.style.display = 'none';
+           }
+         }
+       });
+       
+       title.addEventListener('keydown', function(e) {
+         if (e.key === 'Enter' || e.key === ' ') {
+           e.preventDefault();
+           title.click();
+         }
+       });
+     });
    });
   </script>
  </body>

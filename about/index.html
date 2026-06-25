@@ -105,18 +105,20 @@
     <div class="sidebar-layout">
      <!-- Main Content Area -->
      <article class="content-area">
-      <h1>About Pocatello Tree Service</h1>
-      <p>Our Company has an outstanding reputation for providing great service at great prices. It is our objective for us to be reliable, timely, and professional so that you can be at ease. Our experts are ready to provide you with all the tree works you need.</p>
-      <p>Our Tree Service</p>
-      <p>Tree Removal</p>
-      <p>Contact Info</p>
-      <p>Pocatello, ID (Service Area)</p>
-      <p>+1-208-417-7993</p>
-      <p>info@treeservicepocatelloidaho.com</p>
-      <p>Operational Hours :</p>
-      <p>Mon-Sa : 8:00-20:00</p>
-      <p>Service Location</p>
-
+<h1>About Us</h1>
+<img src="../wp-content/uploads/2021/04/Pocatello-Tree-Service.jpg" alt="Pocatello Tree Service" width="426" height="640" />
+<p>When it comes to tree services, we realize that you want only the best.
+                 <a href="../index.html">Pocatello Tree Service</a>
+                 provides our customers only the highest quality tree services. We provide experts and certified arborists to complete your tree services. This means that it can be handled no matter how simple, how complex, or how urgent. Our company is dedicated to handling each tree service request efficiently and affordably. Pocatello Tree Service provides the following services:</p>
+<ul><li><strong>Tree Removal</strong></li>
+<li><strong>Tree Trimming</strong></li>
+<li><strong>Tree Stump Grinding And Removal</strong></li>
+<li><strong>Tree Cabling And Bracing</strong></li>
+<li><strong>Shrub Removal</strong></li>
+<li><strong>Residential And Commercial Tree Service</strong></li>
+<li><strong>Emergency Tree Service</strong></li></ul>
+<p>Our Company has an outstanding reputation for providing great service at great prices. It is our objective for us to be reliable, timely, and professional so that you can be at ease. Our experts are ready to provide you with all the tree works you need.</p>
+<a href="tel:208-417-7993">Call Us : 208-417-7993</a>
      </article>
      
      <!-- Sidebar Area -->
@@ -185,14 +187,15 @@
      <a href="../chubbuck-idaho/">Chubbuck</a> | 
      <a href="../blackfoot-idaho/">Blackfoot</a> | 
      <a href="../tree-service-caldwell-idaho/">Caldwell</a> | 
-     <a href="../tree-service-twin-falls/">Tree Service Twin Falls</a>
+     <a href="../tree-service-twin-falls/">Twin Falls</a>
     </div>
    </div>
   </footer>
 
-  <!-- Script for Mobile Navigation Menu -->
+  <!-- Script for Mobile Navigation Menu & Accordions -->
   <script>
    document.addEventListener('DOMContentLoaded', function() {
+     // Mobile Navigation Menu Toggle
      var mobileToggle = document.querySelector('.mobile-nav-toggle');
      var mobileMenu = document.querySelector('.mobile-nav-menu');
      
@@ -207,7 +210,44 @@
            mobileToggle.classList.add('open');
          }
        });
+       
+       // Close menu when clicking links
+       var mobileLinks = mobileMenu.querySelectorAll('a');
+       mobileLinks.forEach(function(link) {
+         link.addEventListener('click', function() {
+           mobileMenu.classList.remove('open');
+           mobileToggle.classList.remove('open');
+         });
+       });
      }
+     
+     // Accordion Logic
+     var accTitles = document.querySelectorAll('.accordion-title');
+     accTitles.forEach(function(title) {
+       title.addEventListener('click', function(e) {
+         e.preventDefault();
+         var isExpanded = title.getAttribute('aria-expanded') === 'true';
+         var newState = !isExpanded;
+         
+         title.setAttribute('aria-expanded', newState ? 'true' : 'false');
+         
+         var content = title.nextElementSibling;
+         if (content && content.classList.contains('accordion-content')) {
+           if (newState) {
+             content.style.display = 'block';
+           } else {
+             content.style.display = 'none';
+           }
+         }
+       });
+       
+       title.addEventListener('keydown', function(e) {
+         if (e.key === 'Enter' || e.key === ' ') {
+           e.preventDefault();
+           title.click();
+         }
+       });
+     });
    });
   </script>
  </body>

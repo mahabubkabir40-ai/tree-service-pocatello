@@ -102,26 +102,32 @@
     <div class="sidebar-layout">
      <!-- Main Content Area -->
      <article class="content-area">
-      <h3>Tree Removal, Tree Trimming & Much More - That's What We Do.</h3>
-      <h2>Do You Need Tree Service In An Emergency Situation?</h2>
-      <h1>Emergency Tree Service Pocatello Idaho</h1>
-      <p>Our mobile emergency response crew is fully equipped to handle high-hazard storm damage. We focus on stabilizing the situation first, using advanced rigging ropes, arborist blocks, crane-assisted lifting, and bucket trucks to dismantle fallen or leaning trees carefully. Our goal is to secure your property immediately, prevent any secondary damage, and safely clear the area so you can focus on returning to normal.</p>
-      <h3>Emergency Tree Removal</h3>
-      <p>In cases like this, we really need to act fast and make sure that the tree is removed methodically that it won’t cause any harm to anything or anyone. It can be tricky, but we won’t back down at all to any challenge that comes our way.</p>
-      <h3>Emergency Tree Trimming</h3>
-      <p>We won’t really know when you’re going to need our assistance that’s why we’re always available 24/7. We also need to make sure that the tree won’t be damaged so it can still grow accordingly.</p>
-      <h3>Emergency Residential And Commercial Tree Service</h3>
-      <p>Your safety is our priority.</p>
-      <p>Our Tree Service</p>
-      <p>Tree Removal</p>
-      <p>Contact Info</p>
-      <p>Pocatello, ID (Service Area)</p>
-      <p>+1-208-417-7993</p>
-      <p>info@treeservicepocatelloidaho.com</p>
-      <p>Operational Hours :</p>
-      <p>Mon-Sa : 8:00-20:00</p>
-      <p>Service Location</p>
-
+<h3>Tree Removal, Tree Trimming & Much More - That's What We Do.
+                 <br />
+                 Your # 1 Choice</h3>
+<h2>Do You Need Tree Service In An Emergency Situation?</h2>
+<a href="tel:208-417-7993">Call Us Now : 208-417-7993</a>
+<img src="../wp-content/uploads/elementor/thumbs/Emergency-Tree-Service-Pocatello-Idaho-p68q1gtumzuypuvx794apyq7mk318f5ewns9pzidxs.jpg" alt="Emergency Tree Service Pocatello Idaho" />
+<h1>Emergency Tree Service Pocatello Idaho</h1>
+<p>Severe weather, lightning strikes, heavy winter ice accumulation, and high-desert windstorms can cause tree branches or entire trees to fail without warning. When a compromised tree falls on your home, blocks your driveway, or threatens local utility lines, you need a prompt and reliable partner. At Pocatello Tree Service, we provide 24/7 rapid mobilization emergency tree services throughout Pocatello, Chubbuck, and surrounding Bannock County.</p>
+<p>Our mobile emergency response crew is fully equipped to handle high-hazard storm damage. We focus on stabilizing the situation first, using advanced rigging ropes, arborist blocks, crane-assisted lifting, and bucket trucks to dismantle fallen or leaning trees carefully. Our goal is to secure your property immediately, prevent any secondary damage, and safely clear the area so you can focus on returning to normal.</p>
+<a href="tel:208-417-7993">Call us Today : 208-417-7993</a>
+<h3>Emergency Tree Removal</h3>
+<p>Usually, with emergency tree removal services, time is of the essence. There will be two instances here most of the time, the first one is when the tree has already fallen and we want to make sure that it won’t be a liability or danger to anyone anymore or cause further property damage. The next one is when a tree is showing signs that it can be a danger to anyone or the surrounding property when it’s about to fall.</p>
+<p>In cases like this, we really need to act fast and make sure that the tree is removed methodically that it won’t cause any harm to anything or anyone. It can be tricky, but we won’t back down at all to any challenge that comes our way.</p>
+<h3>Emergency Tree Trimming</h3>
+<p>Sometimes, we don’t really need to entirely remove a tree as it does not pose that much danger. But if a branch or a part of it is barely hanging on about to fall and harm anyone or anything then that’s the time that you call us for help.</p>
+<p>We won’t really know when you’re going to need our assistance that’s why we’re always available 24/7. We also need to make sure that the tree won’t be damaged so it can still grow accordingly.</p>
+<p>Also, it’s important to call us and trim those trees before severe weather conditions like storms, snow, or strong winds. You don’t want those tree branches flying and cause property damage or worse injure anyone.</p>
+<a href="tel:208-417-7993">Call Us Now : 208-417-7993</a>
+<h4>Emergency Tree Stump Grinding And Removal</h4>
+<p>Tree stumps may not really pose the same levels of danger as opposed to fully-grown trees that are large enough to really wreck homes or cars parking outside. But if you need tree stump removal and grinding services pronto, then we’re here to help anytime.</p>
+<h4>Emergency Tree Cabling And Bracing</h4>
+<p>Our emergency tree services include preventative measures like cabling and bracing trees. Sometimes, we won’t have enough time to do so when severe weather or hurricane is en-route and this is bad news if you have a tree that’s visibly going to either be uprooted or have branches flailing and flying around. We don’t want that. Call us!</p>
+<a href="tel:208-417-7993">Call Us Now : 208-417-7993</a>
+<h3>Emergency Residential And Commercial Tree Service</h3>
+<p>Need to secure your home and or commercial spaces ASAP? No worries, call us and we’ll be there in a jiffy to trim, remove, brace, or cable that tree right away. We will perform these services at a very reasonable rate even if it’s an emergency request.</p>
+<p>Your safety is our priority.</p>
      </article>
      
      <!-- Sidebar Area -->
@@ -190,14 +196,15 @@
      <a href="../chubbuck-idaho/">Chubbuck</a> | 
      <a href="../blackfoot-idaho/">Blackfoot</a> | 
      <a href="../tree-service-caldwell-idaho/">Caldwell</a> | 
-     <a href="../tree-service-twin-falls/">Tree Service Twin Falls</a>
+     <a href="../tree-service-twin-falls/">Twin Falls</a>
     </div>
    </div>
   </footer>
 
-  <!-- Script for Mobile Navigation Menu -->
+  <!-- Script for Mobile Navigation Menu & Accordions -->
   <script>
    document.addEventListener('DOMContentLoaded', function() {
+     // Mobile Navigation Menu Toggle
      var mobileToggle = document.querySelector('.mobile-nav-toggle');
      var mobileMenu = document.querySelector('.mobile-nav-menu');
      
@@ -212,7 +219,44 @@
            mobileToggle.classList.add('open');
          }
        });
+       
+       // Close menu when clicking links
+       var mobileLinks = mobileMenu.querySelectorAll('a');
+       mobileLinks.forEach(function(link) {
+         link.addEventListener('click', function() {
+           mobileMenu.classList.remove('open');
+           mobileToggle.classList.remove('open');
+         });
+       });
      }
+     
+     // Accordion Logic
+     var accTitles = document.querySelectorAll('.accordion-title');
+     accTitles.forEach(function(title) {
+       title.addEventListener('click', function(e) {
+         e.preventDefault();
+         var isExpanded = title.getAttribute('aria-expanded') === 'true';
+         var newState = !isExpanded;
+         
+         title.setAttribute('aria-expanded', newState ? 'true' : 'false');
+         
+         var content = title.nextElementSibling;
+         if (content && content.classList.contains('accordion-content')) {
+           if (newState) {
+             content.style.display = 'block';
+           } else {
+             content.style.display = 'none';
+           }
+         }
+       });
+       
+       title.addEventListener('keydown', function(e) {
+         if (e.key === 'Enter' || e.key === ' ') {
+           e.preventDefault();
+           title.click();
+         }
+       });
+     });
    });
   </script>
  </body>

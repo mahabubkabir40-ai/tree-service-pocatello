@@ -105,20 +105,20 @@
     <div class="sidebar-layout">
      <!-- Main Content Area -->
      <article class="content-area">
-      <h1>Tree Service In Pocatello Idaho</h1>
-      <p>Pocatello Tree Service</p>
-      <p>Providing Free estimates for any type of tree service you may need, we always deliver honest and fair quotes. Since we have been in business so long,</p>
-      <h2>Pocatello Tree Service provides :</h2>
-      <p>Our Tree Service</p>
-      <p>Tree Removal</p>
-      <p>Contact Info</p>
-      <p>Pocatello, ID (Service Area)</p>
-      <p>+1-208-417-7993</p>
-      <p>info@treeservicepocatelloidaho.com</p>
-      <p>Operational Hours :</p>
-      <p>Mon-Sa : 8:00-20:00</p>
-      <p>Service Location</p>
-
+<h1>Tree Service In Pocatello Idaho</h1>
+<p><strong><a href="../index.html">Pocatello Tree Service</a>
+                  provides a wide range of tree services. our company and its workers are all certified and trained. A premium service is our goal for our valued customers.</strong></p>
+<p><strong>Providing Free estimates for any type of tree service you may need, we always deliver honest and fair quotes. Since we have been in business so long,</strong></p>
+<p><strong>If you are having any tree problems, contact us about them. Instead of wasting your time and energy doing the work yourself, you could hire professionals to do it more quickly. Pocatello Tree Service promises that your experience will be a pleasant one due to our skill & experience.</strong></p>
+<h2>Pocatello Tree Service provides :</h2>
+<ul><li>Tree Removal</li>
+<li>Tree Trimming</li>
+<li>Tree Stump Removal And Grinding</li>
+<li>Tree Cabling And Bracing</li>
+<li>Shrub Removal</li>
+<li>Emergency Tree Services</li></ul>
+<h4>Contact Us Today To Get A Free Estimate !</h4>
+<a href="tel:208-417-7993">Call Now : 208-417-7993</a>
      </article>
      
      <!-- Sidebar Area -->
@@ -187,14 +187,15 @@
      <a href="../chubbuck-idaho/">Chubbuck</a> | 
      <a href="../blackfoot-idaho/">Blackfoot</a> | 
      <a href="../tree-service-caldwell-idaho/">Caldwell</a> | 
-     <a href="../tree-service-twin-falls/">Tree Service Twin Falls</a>
+     <a href="../tree-service-twin-falls/">Twin Falls</a>
     </div>
    </div>
   </footer>
 
-  <!-- Script for Mobile Navigation Menu -->
+  <!-- Script for Mobile Navigation Menu & Accordions -->
   <script>
    document.addEventListener('DOMContentLoaded', function() {
+     // Mobile Navigation Menu Toggle
      var mobileToggle = document.querySelector('.mobile-nav-toggle');
      var mobileMenu = document.querySelector('.mobile-nav-menu');
      
@@ -209,7 +210,44 @@
            mobileToggle.classList.add('open');
          }
        });
+       
+       // Close menu when clicking links
+       var mobileLinks = mobileMenu.querySelectorAll('a');
+       mobileLinks.forEach(function(link) {
+         link.addEventListener('click', function() {
+           mobileMenu.classList.remove('open');
+           mobileToggle.classList.remove('open');
+         });
+       });
      }
+     
+     // Accordion Logic
+     var accTitles = document.querySelectorAll('.accordion-title');
+     accTitles.forEach(function(title) {
+       title.addEventListener('click', function(e) {
+         e.preventDefault();
+         var isExpanded = title.getAttribute('aria-expanded') === 'true';
+         var newState = !isExpanded;
+         
+         title.setAttribute('aria-expanded', newState ? 'true' : 'false');
+         
+         var content = title.nextElementSibling;
+         if (content && content.classList.contains('accordion-content')) {
+           if (newState) {
+             content.style.display = 'block';
+           } else {
+             content.style.display = 'none';
+           }
+         }
+       });
+       
+       title.addEventListener('keydown', function(e) {
+         if (e.key === 'Enter' || e.key === ' ') {
+           e.preventDefault();
+           title.click();
+         }
+       });
+     });
    });
   </script>
  </body>

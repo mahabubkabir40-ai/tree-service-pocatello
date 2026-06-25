@@ -37,7 +37,7 @@ def verify_files():
             content = f.read()
             
         # Verify script presence
-        if 'Custom lightweight accordion toggle for Elementor FAQ sections' not in content:
+        if 'Accordion Logic' not in content:
             print(f"Error: Script missing in {relative_path}")
             continue
             
