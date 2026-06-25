@@ -73,10 +73,9 @@
     </nav>
     
     <div class="nav-cta">
-     <a class="btn btn-secondary" href="tel:208-417-7993">
-      <i class="fas fa-phone-alt" style="margin-right: 8px; color: var(--color-primary);"></i>208-417-7993
+     <a class="btn btn-primary" href="tel:208-417-7993">
+      <i class="fas fa-phone-alt" style="margin-right: 8px;"></i>Call 208-417-7993
      </a>
-     <a class="btn btn-primary" href="../#estimate-form">Free Estimate</a>
     </div>
     
     <button aria-label="Toggle Navigation" class="mobile-nav-toggle">
@@ -109,7 +108,6 @@
      <a class="btn btn-primary" href="tel:208-417-7993">
       <i class="fas fa-phone-alt" style="margin-right: 8px;"></i>Call Now: 208-417-7993
      </a>
-     <a class="btn btn-secondary" href="../#estimate-form">Get Free Estimate</a>
     </div>
    </div>
   </header>
@@ -143,38 +141,23 @@
       </div>
      </div>
      
-     <!-- Contact Form -->
+     <!-- Direct Call Widget -->
      <div>
-      <form class="form-card" data-netlify="true" method="POST" name="contact-form">
-       <input name="form-name" type="hidden" value="contact-form"/>
-       <div class="form-row">
-        <div class="form-group">
-         <label for="contact-name">Your Name</label>
-         <input class="form-control" id="contact-name" name="name" required="" type="text"/>
-        </div>
-        <div class="form-group">
-         <label for="contact-phone">Phone Number</label>
-         <input class="form-control" id="contact-phone" name="phone" required="" type="tel"/>
-        </div>
+      <div class="card text-center" style="padding: var(--spacing-lg); display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: var(--color-white); border: 1px solid var(--color-light-gray); height: 100%;">
+       <div class="feature-icon-wrapper" style="background-color: var(--color-primary); color: var(--color-white); width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: var(--spacing-sm);">
+        <i class="fas fa-phone-alt"></i>
        </div>
-       
-       <div class="form-group">
-        <label for="contact-email">Email Address</label>
-        <input class="form-control" id="contact-email" name="email" required="" type="email"/>
-       </div>
-       
-       <div class="form-group">
-        <label for="contact-subject">Subject</label>
-        <input class="form-control" id="contact-subject" name="subject" required="" type="text"/>
-       </div>
-       
-       <div class="form-group">
-        <label for="contact-message">Message</label>
-        <textarea class="form-control" id="contact-message" name="message" required="" placeholder="How can we help you?"></textarea>
-       </div>
-       
-       <button class="btn btn-primary btn-block" type="submit">Send Message</button>
-      </form>
+       <h3 style="color: var(--color-dark); margin-bottom: var(--spacing-xs);">Call Our Arborist Team</h3>
+       <p style="color: var(--color-text-muted); margin-bottom: var(--spacing-md); font-size: 1.05rem; line-height: 1.6;">
+        We handle all scheduling and estimate requests directly over the phone. Speak with a local tree expert in seconds.
+       </p>
+       <a class="btn btn-primary" href="tel:208-417-7993" style="font-size: 1.2rem; padding: var(--spacing-sm) var(--spacing-md); width: 100%; justify-content: center; display: inline-flex; align-items: center; gap: 8px;">
+        <i class="fas fa-phone-alt"></i> Call 208-417-7993
+       </a>
+       <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-top: var(--spacing-sm); margin-bottom: 0;">
+        Available for emergencies 24/7.
+       </p>
+      </div>
      </div>
     </div>
    </div>

@@ -75,10 +75,9 @@
     </nav>
     
     <div class="nav-cta">
-     <a class="btn btn-secondary" href="tel:208-417-7993">
-      <i class="fas fa-phone-alt" style="margin-right: 8px; color: var(--color-primary);"></i>208-417-7993
+     <a class="btn btn-primary" href="tel:208-417-7993">
+      <i class="fas fa-phone-alt" style="margin-right: 8px;"></i>Call 208-417-7993
      </a>
-     <a class="btn btn-primary" href="#estimate-form">Free Estimate</a>
     </div>
     
     <button aria-label="Toggle Navigation" class="mobile-nav-toggle">
@@ -111,7 +110,6 @@
      <a class="btn btn-primary" href="tel:208-417-7993">
       <i class="fas fa-phone-alt" style="margin-right: 8px;"></i>Call Now: 208-417-7993
      </a>
-     <a class="btn btn-secondary" href="#estimate-form">Get Free Estimate</a>
     </div>
    </div>
   </header>
@@ -133,9 +131,6 @@
         <a class="btn btn-primary" href="tel:208-417-7993">
          <i class="fas fa-phone-alt" style="margin-right: 8px;"></i>Call 208-417-7993
         </a>
-        <a class="btn btn-secondary" href="#estimate-form" style="border-color: var(--color-white); color: var(--color-white);">
-         Get Free Estimate
-        </a>
        </div>
        <div class="hero-trust">
         <span class="trust-item"><i class="fas fa-check-circle"></i> 10+ Years Local Experience</span>
@@ -146,11 +141,11 @@
       
       <!-- Hero Side Card -->
       <div class="hero-card">
-       <h3>Call For A Free Estimate !</h3>
+       <h3>Call For A Free Quote!</h3>
        <p style="font-size: 0.95rem; margin-bottom: var(--spacing-sm); color: var(--color-text-muted);">
-        Get A Free Quote Here !
+        Speak directly with our local arborist for transparent phone pricing.
        </p>
-       <a class="btn btn-dark btn-block" href="#estimate-form" style="text-align: center;">Request Free Bid</a>
+       <a class="btn btn-dark btn-block" href="tel:208-417-7993" style="text-align: center;"><i class="fas fa-phone-alt" style="margin-right: 8px;"></i>Call 208-417-7993</a>
       </div>
      </div>
     </section>
@@ -362,74 +357,20 @@
      </div>
     </section>
 
-    <!-- Form & Info Split Section -->
-    <section class="section container" id="estimate-form">
-     <div class="contact-section-split">
-      <div>
-       <span class="badge"><i class="fas fa-calendar-alt"></i> Schedule Free Inspection</span>
-       <h2>Get Your Free Local Tree Service Estimate</h2>
-       <p>
-        Fill out the form to request a free site visit. Our arborist will evaluate your trees, assess potential hazards, and provide a clear, transparent cost breakdown.
-       </p>
-       <div style="margin-top: var(--spacing-md);">
-        <p style="font-weight: 600; color: var(--color-dark); margin-bottom: 4px;">
-         <i class="fas fa-envelope" style="color: var(--color-primary); margin-right: 8px;"></i> info@treeservicepocatelloidaho.com
-        </p>
-        <p style="font-weight: 600; color: var(--color-dark);">
-         <i class="fas fa-phone-alt" style="color: var(--color-primary); margin-right: 8px;"></i> 208-417-7993
-        </p>
-        <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-top: var(--spacing-sm);">
-         *Serving Pocatello, Chubbuck, Blackfoot, and surrounding Southeast Idaho communities.
-        </p>
-       </div>
-      </div>
-      
-      <!-- Netlify Form -->
-      <div>
-       <form class="form-card" data-netlify="true" method="POST" name="estimate-request">
-        <input name="form-name" type="hidden" value="estimate-request"/>
-        
-        <div class="form-row">
-         <div class="form-group">
-          <label for="name">Your Name</label>
-          <input class="form-control" id="name" name="name" required="" type="text"/>
-         </div>
-         <div class="form-group">
-          <label for="phone">Phone Number</label>
-          <input class="form-control" id="phone" name="phone" required="" type="tel"/>
-         </div>
-        </div>
-        
-        <div class="form-group">
-         <label for="email">Email Address</label>
-          <input class="form-control" id="email" name="email" required="" type="email"/>
-        </div>
-        
-        <div class="form-group">
-         <label for="address">Property Address</label>
-          <input class="form-control" id="address" name="address" placeholder="Pocatello area address" required="" type="text"/>
-        </div>
-        
-        <div class="form-group">
-         <label for="service">Service Needed</label>
-         <select class="form-control" id="service" name="service" required="">
-          <option value="">-- Select Service --</option>
-          <option value="removal">Tree Removal</option>
-          <option value="trimming">Tree Trimming &amp; Pruning</option>
-          <option value="grinding">Stump Grinding</option>
-          <option value="emergency">Emergency Storm Response</option>
-          <option value="other">Other Tree Care Needs</option>
-         </select>
-        </div>
-        
-        <div class="form-group">
-         <label for="message">Message / Scope of Work</label>
-         <textarea class="form-control" id="message" name="message" placeholder="Describe the trees (e.g. large elm near power line, stump in front yard)" required=""></textarea>
-        </div>
-        
-        <button class="btn btn-primary btn-block" type="submit">Submit Request</button>
-       </form>
-      </div>
+    <!-- Call CTA Section -->
+    <section class="section container" id="call-cta">
+     <div class="bg-primary text-center" style="padding: var(--spacing-lg) var(--spacing-md); border-radius: var(--radius-lg); color: var(--color-white); background: linear-gradient(135deg, var(--color-primary), var(--color-dark)); box-shadow: var(--shadow-md);">
+      <span class="badge" style="background-color: rgba(255,255,255,0.2); color: var(--color-white); margin-bottom: var(--spacing-xs);"><i class="fas fa-phone-alt"></i> Free Estimate via Phone</span>
+      <h2 style="color: var(--color-white); margin-top: 0; font-size: 2.25rem;">Get Your Free Local Tree Service Estimate</h2>
+      <p style="color: rgba(255,255,255,0.9); max-width: 600px; margin: var(--spacing-sm) auto var(--spacing-md) auto; font-size: 1.1rem; line-height: 1.6;">
+       Speak directly with our expert arborist. We provide free site inspections, hazard evaluations, and transparent cost breakdowns over the phone.
+      </p>
+      <a class="btn" href="tel:208-417-7993" style="background-color: var(--color-white); color: var(--color-dark); font-size: 1.4rem; padding: var(--spacing-sm) var(--spacing-lg); font-weight: 700; border-radius: var(--radius-md); display: inline-flex; align-items: center; gap: var(--spacing-xs); border: none; box-shadow: var(--shadow-sm); cursor: pointer; transition: transform 0.2s;">
+       <i class="fas fa-phone-alt" style="color: var(--color-primary);"></i> 208-417-7993
+      </a>
+      <p style="font-size: 0.9rem; color: rgba(255,255,255,0.75); margin-top: var(--spacing-md); margin-bottom: 0;">
+       *Serving Pocatello, Chubbuck, Blackfoot, and surrounding Southeast Idaho communities.
+      </p>
      </div>
     </section>
 
