@@ -887,29 +887,27 @@ def redesign_homepage(original_path, output_path):
         for p in quality_heading.find_all_next('p')[:2]:
             quality_paragraphs_html += f"      <p>{clean_text(p.text)}</p>\n"
             
-    # Service Cards
     services_list = [
-        ("Tree Removal", "Tree Removal Pocatello Idaho", "tree-removal/", "wp-content/uploads/2021/04/Tree-Removal-Pocatello-1.jpg"),
-        ("Tree Trimming", "Tree Trimming Pocatello Idaho", "tree-trimming/", "wp-content/uploads/2021/04/Tree-Trimming-Pocatello-1.jpg"),
-        ("Stump Grinding", "Tree Stump Grinding and Removal", "stump-removal-grinding/", "wp-content/uploads/2021/04/Tree-Service-company-1.jpg"),
-        ("Cabling & Bracing", "Tree Cabling and Bracing", "cabling-bracing/", "wp-content/uploads/2021/04/Pocatello-Tree-Service.jpg"),
-        ("Shrub Removal", "Shrub Removal", "shrub-removal/", "wp-content/uploads/2021/04/Tree-Service-Pocatello.jpg"),
-        ("Emergency Services", "24/7 Emergency Tree Services", "emergency-tree-services/", "wp-content/uploads/2021/04/Tree-Removal-Pocatello-1.jpg")
+        ("Tree Removal", "tree-removal/", "wp-content/uploads/2021/04/Tree-Removal-Pocatello-1.jpg",
+         "Professional tree removal services in Pocatello, ID. Our licensed arborists safely extract dead, diseased, or hazardous trees using precision rigging systems to protect your home and yard."),
+         
+        ("Tree Trimming", "tree-trimming/", "wp-content/uploads/2021/04/Tree-Trimming-Pocatello-1.jpg",
+         "Precision tree trimming and pruning in Pocatello, ID. Thin crowns, remove dangerous deadwood, and shape limbs to boost high-desert wind resistance and protect your roof from storm damage."),
+         
+        ("Stump Grinding", "stump-removal-grinding/", "wp-content/uploads/2021/04/Tree-Service-company-1.jpg",
+         "Fast stump grinding and root removal in Bannock County. We grind stumps deep below ground grade to prevent pests like carpenter ants, clear your lawn, and prepare the site for fresh sod."),
+         
+        ("Cabling & Bracing", "cabling-bracing/", "wp-content/uploads/2021/04/Pocatello-Tree-Service.jpg",
+         "Arborist cabling and structural bracing in Pocatello, Idaho. We install premium support systems to secure weak branch unions and protect storm-threatened trees from splitting or failing."),
+         
+        ("Shrub Removal", "shrub-removal/", "wp-content/uploads/2021/04/Tree-Service-Pocatello.jpg",
+         "Complete shrub removal and land clearing services. We excavate overgrown bushes and invasive roots to restore pedestrian access, improve curb appeal, and prep your landscaping for new designs."),
+         
+        ("Emergency Services", "emergency-tree-services/", "wp-content/uploads/2021/04/Tree-Removal-Pocatello-1.jpg",
+         "24/7 emergency tree service and rapid storm cleanup in Pocatello, ID. Call 208-417-7993 for urgent hazard removal of fallen trees, split limbs, and power line clearance.")
     ]
     services_cards_html = ""
-    for s_name, s_term, s_link, s_img in services_list:
-        h3 = content_area.find(lambda t: t.name in ['h1','h2','h3','h4','h5','h6'] and s_term in t.text)
-        s_paragraphs = []
-        if h3:
-            all_after = h3.find_all_next()
-            for el in all_after:
-                if el.name in ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'section']:
-                    break
-                if el.name == 'p':
-                    txt = clean_text(el.text)
-                    if txt and txt not in s_paragraphs:
-                        s_paragraphs.append(txt)
-        p_html = "".join(f"<p>{p}</p>" for p in s_paragraphs)
+    for s_name, s_link, s_img, s_desc in services_list:
         services_cards_html += f"""
        <div class="card">
         <div class="card-img-wrapper">
@@ -917,11 +915,12 @@ def redesign_homepage(original_path, output_path):
         </div>
         <div class="card-content">
          <h3>{s_name}</h3>
-         {p_html}
+         <p>{s_desc}</p>
          <a class="card-link" href="{s_link}">Learn More <i class="fas fa-arrow-right"></i></a>
         </div>
        </div>
 """
+    
 
     # Residential And Commercial
     res_heading = content_area.find(lambda tag: tag.name in ['h1', 'h2', 'h3', 'h4'] and "Residential And Commercial Tree Service" in tag.get_text())
