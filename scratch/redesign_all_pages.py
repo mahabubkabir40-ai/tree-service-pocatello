@@ -755,12 +755,61 @@ __FAQS__
 </html>
 """
 
+SEO_OVERRIDES = {
+    "index.html": {
+        "title": "Tree Service Pocatello | Best Tree Removal & Trimming ID",
+        "h1": "Tree Service Pocatello"
+    },
+    "tree-removal/index.html": {
+        "title": "Tree Removal Pocatello | Professional Arborist Services",
+        "h1": "Tree Removal Pocatello"
+    },
+    "tree-trimming/index.html": {
+        "title": "Tree Trimming Pocatello | Precision Tree Pruning & Care",
+        "h1": "Tree Trimming Pocatello"
+    },
+    "stump-removal-grinding/index.html": {
+        "title": "Stump Grinding & Stump Removal Pocatello",
+        "h1": "Stump Removal & Grinding Pocatello"
+    },
+    "cabling-bracing/index.html": {
+        "title": "Tree Cabling & Bracing Pocatello | Structural Support",
+        "h1": "Tree Cabling & Bracing Pocatello"
+    },
+    "shrub-removal/index.html": {
+        "title": "Shrub Removal Pocatello | Hedge Clearing & Land Prep",
+        "h1": "Shrub Removal Pocatello"
+    },
+    "emergency-tree-services/index.html": {
+        "title": "Emergency Tree Service Pocatello | 24/7 Rapid Response",
+        "h1": "Emergency Tree Service Pocatello"
+    },
+    "services/index.html": {
+        "title": "Tree Care Services Pocatello | Pocatello Tree Service",
+        "h1": "Tree Care Services Pocatello"
+    },
+    "about/index.html": {
+        "title": "About Us | Pocatello Tree Service",
+        "h1": "About Pocatello Tree Service"
+    },
+    "contact/index.html": {
+        "title": "Contact Us | Pocatello Tree Service",
+        "h1": "Contact Pocatello Tree Service"
+    },
+    "privacy-policy/index.html": {
+        "title": "Privacy Policy | Pocatello Tree Service",
+        "h1": "Privacy Policy"
+    }
+}
+
 def redesign_homepage(original_path, output_path):
     print(f"Redesigning Homepage: {original_path} -> {output_path}")
     with open(original_path, 'r', encoding='utf-8') as f:
         soup = BeautifulSoup(f.read(), 'html.parser')
         
     title, meta_tags, canonical, schema = extract_metadata(soup)
+    if "index.html" in SEO_OVERRIDES:
+        title = SEO_OVERRIDES["index.html"]["title"]
     meta_html, canonical_html, schema_html = format_meta(title, meta_tags, canonical, schema)
     
     content_area = soup.find(class_='entry-content') or soup.find(class_='elementor') or soup.find('main')
@@ -964,9 +1013,19 @@ def redesign_subpage(original_path, prefix, is_contact=False, is_privacy=False):
         soup = BeautifulSoup(f.read(), 'html.parser')
         
     title, meta_tags, canonical, schema = extract_metadata(soup)
-    meta_html, canonical_html, schema_html = format_meta(title, meta_tags, canonical, schema)
     
+    rel_path = ""
+    for k in SEO_OVERRIDES.keys():
+        if k in original_path.replace('\\', '/'):
+            rel_path = k
+            break
+            
     header_h1 = title.split('|')[0].strip()
+    if rel_path in SEO_OVERRIDES:
+        title = SEO_OVERRIDES[rel_path]["title"]
+        header_h1 = SEO_OVERRIDES[rel_path]["h1"]
+        
+    meta_html, canonical_html, schema_html = format_meta(title, meta_tags, canonical, schema)
     
     # Extract cleaned content
     entry_content = soup.find(class_='entry-content')
