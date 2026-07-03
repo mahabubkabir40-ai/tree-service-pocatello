@@ -50,6 +50,8 @@ def clean_element(element):
         return content
         
     new_tag = element.name
+    if new_tag == 'h1':
+        new_tag = 'h2'
     attrs_str = ""
     if new_tag == 'a':
         href = element.get('href', '')
