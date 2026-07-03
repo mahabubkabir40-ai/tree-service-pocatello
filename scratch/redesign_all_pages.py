@@ -873,30 +873,38 @@ def redesign_homepage(original_path, output_path):
             
     services_list = [
         ("Tree Removal", "tree-removal/", "wp-content/uploads/elementor/thumbs/Tree-Removal-Pocatello-p61zciz9krnb8ds2snv0gp8n4rcmly3potkirtuxhs.jpg",
-         "Professional tree removal services in Pocatello, ID. Our licensed arborists safely extract dead, diseased, or hazardous trees using precision rigging systems to protect your home and yard."),
+         "Professional tree removal services in Pocatello, ID. Our licensed arborists safely extract dead, diseased, or hazardous trees using precision rigging systems to protect your home and yard.",
+         "Tree Removal Pocatello"),
          
         ("Tree Trimming", "tree-trimming/", "wp-content/uploads/elementor/thumbs/Tree-Trimming-Pocatello-p61zlxd5x4ijc04jwq4pebukzh0rkzf2zcfbjfx79s.jpg",
-         "Precision tree trimming and pruning in Pocatello, ID. Thin crowns, remove dangerous deadwood, and shape limbs to boost high-desert wind resistance and protect your roof from storm damage."),
+         "Precision tree trimming and pruning in Pocatello, ID. Thin crowns, remove dangerous deadwood, and shape limbs to boost high-desert wind resistance and protect your roof from storm damage.",
+         "Tree Trimming Pocatello"),
          
         ("Stump Grinding", "stump-removal-grinding/", "wp-content/uploads/elementor/thumbs/Tree-Stump-Grinding-Tree-Removal-p62035qn7s3s6n3fa6ah3zat1s30p7txcmzsa2dd74.jpg",
-         "Fast stump grinding and root removal in Bannock County. We grind stumps deep below ground grade to prevent pests like carpenter ants, clear your lawn, and prepare the site for fresh sod."),
+         "Fast stump grinding and root removal in Bannock County. We grind stumps deep below ground grade to prevent pests like carpenter ants, clear your lawn, and prepare the site for fresh sod.",
+         "Stump Grinding Pocatello"),
          
         ("Cabling & Bracing", "cabling-bracing/", "wp-content/uploads/elementor/thumbs/Tree-Cabling-and-Bracing-Pocatello-p620azq862tsxnptjk6jw0539dh4uexefepg92r9cg.jpg",
-         "Arborist cabling and structural bracing in Pocatello, Idaho. We install premium support systems to secure weak branch unions and protect storm-threatened trees from splitting or failing."),
+         "Arborist cabling and structural bracing in Pocatello, Idaho. We install premium support systems to secure weak branch unions and protect storm-threatened trees from splitting or failing.",
+         "Tree Cabling & Bracing Pocatello"),
          
         ("Shrub Removal", "shrub-removal/", "wp-content/uploads/elementor/thumbs/Tree-Shrub-Removal-Pocatello-p620h9bhqbemc2m4y9p0if7ptul85rszaf9zfhgrv4.jpg",
-         "Complete shrub removal and land clearing services. We excavate overgrown bushes and invasive roots to restore pedestrian access, improve curb appeal, and prep your landscaping for new designs."),
+         "Complete shrub removal and land clearing services. We excavate overgrown bushes and invasive roots to restore pedestrian access, improve curb appeal, and prep your landscaping for new designs.",
+         "Shrub Removal Pocatello"),
          
         ("Emergency Services", "emergency-tree-services/", "wp-content/uploads/elementor/thumbs/Emergency-Tree-Service-Pocatello-p620lyifwhu8dvsdiatuz8ior7fanagnxopdtahwr4.jpg",
-         "24/7 emergency tree service and rapid storm cleanup in Pocatello, ID. Call 208-417-7993 for urgent hazard removal of fallen trees, split limbs, and power line clearance.")
+         "24/7 emergency tree service and rapid storm cleanup in Pocatello, ID. Call 208-417-7993 for urgent hazard removal of fallen trees, split limbs, and power line clearance.",
+         "Emergency Tree Service Pocatello")
     ]
     services_cards_html = ""
-    for s_name, s_link, s_img, s_desc in services_list:
+    for s_name, s_link, s_img, s_desc, s_alt in services_list:
         services_cards_html += f"""
        <div class="card">
-        <div class="card-img-wrapper">
-         <img alt="{s_name} Service in Pocatello" class="card-img" src="{s_img}"/>
-        </div>
+        <a href="{s_link}" aria-label="{s_name} in Pocatello">
+         <div class="card-img-wrapper">
+          <img alt="{s_alt}" class="card-img" src="{s_img}"/>
+         </div>
+        </a>
         <div class="card-content">
          <h3>{s_name}</h3>
          <p>{s_desc}</p>
