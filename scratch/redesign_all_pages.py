@@ -922,7 +922,19 @@ def redesign_homepage(original_path, output_path):
     if about_poc_p:
         desc_p = about_poc_p.find_next('p')
         if desc_p:
-            about_pocatello_paragraphs_html += f"       <p>{clean_text(desc_p.text)}</p>\n"
+            text = clean_text(desc_p.text)
+            if "Wikipedia" in text:
+                text_with_links = text.replace("Wikipedia", '<a href="https://en.wikipedia.org/wiki/Pocatello,_Idaho" target="_blank" rel="noopener">Wikipedia</a>')
+                if "US Census Bureau" in text_with_links:
+                    text_with_links = text_with_links.replace("Wikipedia", '<a href="https://en.wikipedia.org/wiki/Pocatello,_Idaho" target="_blank" rel="noopener">Wikipedia</a>')
+                # Replace the end to add city site
+                text_with_links = text_with_links.replace(
+                    'visit <a href="https://en.wikipedia.org/wiki/Pocatello,_Idaho" target="_blank" rel="noopener">Wikipedia</a> .',
+                    'visit <a href="https://en.wikipedia.org/wiki/Pocatello,_Idaho" target="_blank" rel="noopener">Wikipedia</a> or the official <a href="https://www.pocatello.gov/" target="_blank" rel="noopener">City of Pocatello website</a>.'
+                )
+                about_pocatello_paragraphs_html += f"       <p>{text_with_links}</p>\n"
+            else:
+                about_pocatello_paragraphs_html += f"       <p>{text}</p>\n"
             
     # Testimonials
     testimonials_html = ""
