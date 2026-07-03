@@ -47,20 +47,32 @@ def optimize_seo():
         with open(full_path, 'r', encoding='utf-8') as f:
             html_content = f.read()
 
-        # 1. Clean Chubbuck from Meta Descriptions on specific pages
-        if rel_path == "contact/index.html":
-            # Shorten description and remove Chubbuck
-            html_content = html_content.replace(
-                'content="Get a free quote from Pocatello Tree Service. Contact us for professional tree removal, trimming, and emergency arbor care in Pocatello and Chubbuck."',
-                'content="Get a free quote from Pocatello Tree Service. Contact us for professional tree removal, trimming, and emergency arbor care in Pocatello, Idaho."'
-            )
-        elif rel_path == "emergency-tree-services/index.html":
-            html_content = html_content.replace(
-                'content="Need 24/7 emergency tree removal in Pocatello or Chubbuck? Our prompt, insured crew clears fallen trees and hazardous limbs quickly. Call 208-417-7993 now!"',
-                'content="Need 24/7 emergency tree removal in Pocatello, Idaho? Our prompt, insured crew clears fallen trees and hazardous limbs quickly. Call 208-417-7993 now!"'
-            )
-
         soup = BeautifulSoup(html_content, 'html.parser')
+
+        # 1. Enforce exact-match Pocatello keywords in meta descriptions
+        descriptions = {
+            "index.html": "Looking for the best tree service Pocatello? We offer expert tree removal Pocatello and 24/7 emergency tree service Pocatello. Call 208-417-7993 today!",
+            "tree-removal/index.html": "Need professional tree removal Pocatello? Contact us for safe tree removal Pocatello and reliable emergency tree service Pocatello. Call 208-417-7993 today!",
+            "emergency-tree-services/index.html": "Need emergency tree service Pocatello? Our 24/7 emergency tree service Pocatello crew handles safe tree removal Pocatello quickly. Call 208-417-7993 now!",
+            "contact/index.html": "Get a free quote from Pocatello Tree Service. Contact us for professional tree removal Pocatello and 24/7 emergency tree service Pocatello. Call 208-417-7993 today!"
+        }
+        
+        if rel_path in descriptions:
+            new_desc = descriptions[rel_path]
+            # Update meta name="description"
+            desc_tag = soup.find('meta', attrs={'name': 'description'})
+            if desc_tag:
+                desc_tag['content'] = new_desc
+            
+            # Update og:description
+            og_desc_tag = soup.find('meta', attrs={'property': 'og:description'})
+            if og_desc_tag:
+                og_desc_tag['content'] = new_desc
+                
+            # Update twitter:description
+            twitter_desc_tag = soup.find('meta', attrs={'name': 'twitter:description'}) or soup.find('meta', attrs={'property': 'twitter:description'})
+            if twitter_desc_tag:
+                twitter_desc_tag['content'] = new_desc
 
         # 2. Add explicit dimensions and lazy-loading to images
         for idx, img in enumerate(soup.find_all('img')):
