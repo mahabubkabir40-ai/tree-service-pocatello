@@ -872,22 +872,22 @@ def redesign_homepage(original_path, output_path):
             quality_paragraphs_html += f"      <p>{clean_text(p.text)}</p>\n"
             
     services_list = [
-        ("Tree Removal", "tree-removal/", "wp-content/uploads/2021/04/Tree-Removal-Pocatello-1.jpg",
+        ("Tree Removal", "tree-removal/", "wp-content/uploads/elementor/thumbs/Tree-Removal-Pocatello-Idaho-p65724el16174z0qn9igfizvprnukz86elpncxhmog.jpg",
          "Professional tree removal services in Pocatello, ID. Our licensed arborists safely extract dead, diseased, or hazardous trees using precision rigging systems to protect your home and yard."),
          
-        ("Tree Trimming", "tree-trimming/", "wp-content/uploads/2021/04/Tree-Trimming-Pocatello-1.jpg",
+        ("Tree Trimming", "tree-trimming/", "wp-content/uploads/elementor/thumbs/Tree-Trimming-Pocatello-Idaho-p66ydj0y9ud9j020ijswybsf3orclcb7sm6fd1shsg.jpg",
          "Precision tree trimming and pruning in Pocatello, ID. Thin crowns, remove dangerous deadwood, and shape limbs to boost high-desert wind resistance and protect your roof from storm damage."),
          
-        ("Stump Grinding", "stump-removal-grinding/", "wp-content/uploads/2021/04/Tree-Service-company-1.jpg",
+        ("Stump Grinding", "stump-removal-grinding/", "wp-content/uploads/elementor/thumbs/Tree-Stump-Removal-Pocatello-Idaho-p6b00y1yf87marp6n1ns163higmetwbcp4f6kfbo5s.jpg",
          "Fast stump grinding and root removal in Bannock County. We grind stumps deep below ground grade to prevent pests like carpenter ants, clear your lawn, and prepare the site for fresh sod."),
          
-        ("Cabling & Bracing", "cabling-bracing/", "wp-content/uploads/2021/04/Pocatello-Tree-Service.jpg",
+        ("Cabling & Bracing", "cabling-bracing/", "wp-content/uploads/elementor/thumbs/Tree-Cabling-And-Bracing-Pocatello-Idaho-p6dwf830c50f6gl8xkz7is3z4kjnaof5evhokyvxn4.jpg",
          "Arborist cabling and structural bracing in Pocatello, Idaho. We install premium support systems to secure weak branch unions and protect storm-threatened trees from splitting or failing."),
          
-        ("Shrub Removal", "shrub-removal/", "wp-content/uploads/2021/04/Tree-Service-Pocatello.jpg",
+        ("Shrub Removal", "shrub-removal/", "wp-content/uploads/elementor/thumbs/Shrub-Removal-Pocatello-Idaho-p6hivwbl6qeirmernqua9lauev8o99vz58yyi72z9s.jpg",
          "Complete shrub removal and land clearing services. We excavate overgrown bushes and invasive roots to restore pedestrian access, improve curb appeal, and prep your landscaping for new designs."),
          
-        ("Emergency Services", "emergency-tree-services/", "wp-content/uploads/2021/04/Tree-Removal-Pocatello-1.jpg",
+        ("Emergency Services", "emergency-tree-services/", "wp-content/uploads/elementor/thumbs/Emergency-Tree-Service-Pocatello-Idaho-p68q1gtumzuypuvx794apyq7mk318f5ewns9pzidxs.jpg",
          "24/7 emergency tree service and rapid storm cleanup in Pocatello, ID. Call 208-417-7993 for urgent hazard removal of fallen trees, split limbs, and power line clearance.")
     ]
     services_cards_html = ""
