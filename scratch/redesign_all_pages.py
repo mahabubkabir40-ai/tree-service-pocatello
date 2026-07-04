@@ -826,29 +826,21 @@ def redesign_homepage(original_path, output_path):
     why_choose_us_title = clean_text(why_heading.text) if why_heading else "Why choose Pocatello Tree Service?"
     
     why_cards_html = ""
-    why_terms = [
-        ("Professional Experienced Staff", "Professional Experienced Staff:"),
-        ("Customer Satisfaction", "Customer Satisfaction:"),
-        ("Affordable Price", "Affordable Price:"),
-        ("Residential & Commercial Tree Service", "Residential & Commercial Tree Service:")
+    why_items = [
+        ("Professional Experienced Staff", 
+         "Our certified arborists bring decades of experience to every property. We use advanced rigging systems and safety techniques to perform professional tree removal and trimming with absolute precision, protecting your home and yard throughout the entire process."),
+        ("Customer Satisfaction", 
+         "Your peace of mind is our priority. From your first call to the final impeccable lawn cleanup, our dedicated team works with pride and dedication to deliver high-quality tree services that consistently exceed local property owner expectations."),
+        ("Affordable Price", 
+         "We provide top-tier tree care at competitive, honest rates. By utilizing highly efficient techniques and advanced machinery, we offer cost-effective tree removal, trimming, and stump grinding services throughout Pocatello without ever compromising on safety or quality."),
+        ("Residential & Commercial Tree Service", 
+         "We offer complete tree care solutions tailored for both residential homes and commercial properties. Whether handling hazard tree removal, developmental pruning, or rapid storm cleanup, our local specialists have the expertise to complete the job safely.")
     ]
-    for n_title, term in why_terms:
-        li = content_area.find(lambda tag: tag.name == 'li' and term in tag.get_text())
-        if li:
-            paragraphs = []
-            all_after = li.find_all_next()
-            for el in all_after:
-                if el.name in ['li', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'section']:
-                    break
-                if el.name == 'p':
-                    txt = clean_text(el.text)
-                    if txt and txt not in paragraphs:
-                        paragraphs.append(txt)
-            p_html = "".join(f"<p>{p}</p>\n        " for p in paragraphs)
-            why_cards_html += f"""
+    for n_title, copy in why_items:
+        why_cards_html += f"""
       <div class="card" style="padding: var(--spacing-md);">
        <h3 style="color: var(--color-primary); margin-bottom: var(--spacing-xs);"><i class="fas fa-check-circle"></i> {n_title}</h3>
-       {p_html}
+       <p>{copy}</p>
       </div>
 """
             
