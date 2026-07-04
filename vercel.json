@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/tree-service-caldwell-idaho",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/tree-service-twin-falls",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
+}
