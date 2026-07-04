@@ -42,7 +42,10 @@ def clean_element(element):
             accordion_html += '</div>\n'
             return accordion_html
 
-    allowed_tags = {'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'ul', 'ol', 'li', 'strong', 'em', 'a', 'br', 'img'}
+    if element.name == 'h5':
+        return ""
+        
+    allowed_tags = {'h1', 'h2', 'h3', 'h4', 'h6', 'p', 'ul', 'ol', 'li', 'strong', 'em', 'a', 'br', 'img'}
     if element.name not in allowed_tags:
         content = ""
         for child in element.children:
@@ -52,9 +55,23 @@ def clean_element(element):
     new_tag = element.name
     if new_tag == 'h1':
         new_tag = 'h2'
+    elif new_tag == 'h4':
+        new_tag = 'h2'
     attrs_str = ""
     if new_tag == 'a':
-        href = element.get('href', '')
+        href = element.get('href', '').strip()
+        if 'tel:' in href or 'mailto:' in href:
+            return ""
+        is_internal = (
+            href.startswith('..') or 
+            href.startswith('/') or 
+            'treeservicepocatelloidaho.com' in href
+        )
+        if is_internal:
+            content = ""
+            for child in element.children:
+                content += clean_element(child)
+            return content.strip()
         attrs_str = f' href="{href}"'
     elif new_tag == 'img':
         src = element.get('src', '')
@@ -76,6 +93,9 @@ def clean_element(element):
         content += clean_element(child)
         
     content = content.strip()
+    if new_tag in {'h1', 'h2', 'h3', 'h4', 'h5', 'h6'}:
+        content = content.rstrip(':- ')
+        
     if not content:
         return ""
         
@@ -231,7 +251,7 @@ __SCHEMA__
    <!-- Page Header -->
    <section class="page-header text-center">
     <div class="container" style="position: relative; z-index: 2;">
-     <span class="badge" style="background-color: rgba(255,255,255,0.1); color: var(--color-primary);"><i class="fas fa-tree"></i> Pocatello Tree Service</span>
+     <span class="badge" style="background-color: rgba(255,255,255,0.15); color: var(--color-white);"><i class="fas fa-tree"></i> Pocatello Tree Service</span>
      <h1 style="color: var(--color-white); margin-top: var(--spacing-xs);">__HEADER_H1__</h1>
     </div>
    </section>
@@ -1103,13 +1123,20 @@ def redesign_subpage(original_path, prefix, is_contact=False, is_privacy=False):
      <!-- Main Content Area -->
      <article class="content-area">
 {cleaned_content}
+       
+       <!-- Premium Callout Banner -->
+       <div class="card text-center" style="background-color: var(--color-light); border-left: 4px solid var(--color-primary); padding: var(--spacing-md); margin-top: var(--spacing-lg);">
+        <h3 style="margin-top: 0; color: var(--color-dark);">Ready to Get Started?</h3>
+        <p style="color: var(--color-text-muted); margin-bottom: var(--spacing-sm);">Contact Pocatello's trusted tree experts today for a free, safe, and professional arborist evaluation.</p>
+        <a class="btn btn-primary" href="tel:208-417-7993" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-phone-alt"></i> Call 208-417-7993</a>
+       </div>
      </article>
      
      <!-- Sidebar Area -->
      <aside class="sidebar-area">
       <!-- Call Widget -->
       <div class="sidebar-widget text-center" style="background-color: var(--color-dark); color: var(--color-white); border-radius: var(--radius-md);">
-       <h4 style="color: var(--color-white); border-color: var(--color-primary);">Need Fast Service?</h4>
+       <h3 style="color: var(--color-white); border-color: var(--color-primary); font-size: 1.25rem; font-weight: 700; margin-bottom: var(--spacing-sm); padding-bottom: var(--spacing-xs); border-bottom: 2px solid var(--color-primary);">Need Fast Service?</h3>
        <p style="font-size: 0.95rem; color: rgba(255,255,255,0.85); margin-bottom: var(--spacing-sm);">
         Contact our arborist team now for a free, no-obligation quote.
        </p>
@@ -1123,7 +1150,7 @@ def redesign_subpage(original_path, prefix, is_contact=False, is_privacy=False):
       
       <!-- Services Menu Widget -->
       <div class="sidebar-widget">
-       <h4>Our Tree Services</h4>
+       <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: var(--spacing-sm); padding-bottom: var(--spacing-xs); border-bottom: 2px solid var(--color-primary);">Our Tree Services</h3>
        <ul class="footer-links" style="color: var(--color-dark-text);">
         <li><a href="{prefix}tree-removal/">Tree Removal</a></li>
         <li><a href="{prefix}tree-trimming/">Tree Trimming</a></li>

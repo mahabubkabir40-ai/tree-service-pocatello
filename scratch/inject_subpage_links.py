@@ -15,6 +15,10 @@ def inject_subpage_links():
             (
                 "emergency tree removal services either for residential areas or commercial establishments.</p>",
                 "emergency tree removal, and <a href=\"../shrub-removal/\">shrub removal</a> services for both residential and commercial properties.</p>"
+            ),
+            (
+                "climate of Bannock County, weather",
+                "climate of <a href=\"https://en.wikipedia.org/wiki/Bannock_County,_Idaho\" target=\"_blank\" rel=\"noopener noreferrer\">Bannock County</a>, weather"
             )
         ],
         "tree-trimming/index.html": [
@@ -29,6 +33,10 @@ def inject_subpage_links():
             (
                 "keeping your trees healthy, safe, and looking their best year-round.</p>",
                 "keeping your trees healthy, safe, and looking their best year-round. If a tree has structural splits but is otherwise healthy, we may also recommend a <a href=\"../cabling-bracing/\">tree cabling and bracing</a> support system.</p>"
+            ),
+            (
+                "clean, professional pruning cuts",
+                "clean, professional <a href=\"https://en.wikipedia.org/wiki/Pruning\" target=\"_blank\" rel=\"noopener noreferrer\">pruning</a> cuts"
             )
         ],
         "stump-removal-grinding/index.html": [
@@ -43,6 +51,10 @@ def inject_subpage_links():
             (
                 "protecting your yard's landscape value.</p>",
                 "protecting your yard's landscape value. To keep the rest of your canopy healthy, we also provide expert <a href=\"../tree-trimming/\">tree trimming</a> and pruning services.</p>"
+            ),
+            (
+                "protecting your yard's landscape value",
+                "protecting your yard's <a href=\"https://en.wikipedia.org/wiki/Landscaping\" target=\"_blank\" rel=\"noopener noreferrer\">landscape value</a>"
             )
         ],
         "cabling-bracing/index.html": [
@@ -57,6 +69,10 @@ def inject_subpage_links():
             (
                 "trim the tree, brace or cable it, or just remove it entirely.",
                 "trim the tree, brace or cable it, or perform a complete <a href=\"../tree-removal/\">tree removal</a>."
+            ),
+            (
+                "co-dominant stems",
+                "<a href=\"https://en.wikipedia.org/wiki/Co-dominant_stem\" target=\"_blank\" rel=\"noopener noreferrer\">co-dominant stems</a>"
             )
         ],
         "shrub-removal/index.html": [
@@ -71,6 +87,10 @@ def inject_subpage_links():
             (
                 "grind down or excavate root balls, and ensure the site is left clean and safe.",
                 "perform any needed <a href=\"../stump-removal-grinding/\">stump grinding</a> or root ball excavation, and ensure the site is left clean and safe."
+            ),
+            (
+                "decrease your property's curb appeal",
+                "decrease your property's <a href=\"https://en.wikipedia.org/wiki/Curb_appeal\" target=\"_blank\" rel=\"noopener noreferrer\">curb appeal</a>"
             )
         ],
         "emergency-tree-services/index.html": [
@@ -85,6 +105,10 @@ def inject_subpage_links():
             (
                 "preventative measures like cabling and bracing trees.",
                 "preventative measures like <a href=\"../cabling-bracing/\">cabling and bracing</a> trees."
+            ),
+            (
+                "lightning strikes, heavy",
+                "<a href=\"https://en.wikipedia.org/wiki/Lightning\" target=\"_blank\" rel=\"noopener noreferrer\">lightning strikes</a>, heavy"
             )
         ]
     }
