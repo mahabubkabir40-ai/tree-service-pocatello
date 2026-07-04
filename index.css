@@ -518,12 +518,14 @@ p:last-child {
 
 @media (min-width: 992px) {
   .hero {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 120px;
+    padding-bottom: 120px;
     border-radius: 0 0 var(--radius-lg) var(--radius-lg);
   }
   .hero-container {
-    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-columns: 1fr;
+    max-width: 800px;
+    margin: 0 auto;
   }
 }
 
@@ -577,18 +579,7 @@ p:last-child {
   color: var(--color-primary);
 }
 
-.hero-card {
-  background-color: var(--color-white);
-  padding: var(--spacing-md);
-  border-radius: var(--radius-md);
-  color: var(--color-dark-text);
-  box-shadow: var(--shadow-medium);
-}
 
-.hero-card h3 {
-  margin-bottom: var(--spacing-sm);
-  color: var(--color-dark);
-}
 
 /* --- Service Cards --- */
 .card {

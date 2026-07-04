@@ -470,15 +470,6 @@ __SCHEMA__
         <span class="trust-item"><i class="fas fa-check-circle"></i> Safe Heavy Rigging Setup</span>
        </div>
       </div>
-      
-      <!-- Hero Side Card -->
-      <div class="hero-card">
-       <h3>__HERO_CARD_TITLE__</h3>
-       <p style="font-size: 0.95rem; margin-bottom: var(--spacing-sm); color: var(--color-text-muted);">
-        __HERO_CARD_TEXT__
-       </p>
-       <a class="btn btn-dark btn-block" href="tel:208-417-7993" style="text-align: center;"><i class="fas fa-phone-alt" style="margin-right: 8px;"></i>Call 208-417-7993</a>
-      </div>
      </div>
     </section>
 
