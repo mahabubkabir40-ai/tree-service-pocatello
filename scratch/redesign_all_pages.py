@@ -130,8 +130,8 @@ TESTIMONIAL_TEMPLATE = """
         </p>
         <div class="testimonial-meta">
          <div class="meta-info">
-          <h4>{name}</h4>
-          <p>{location}</p>
+          <div class="meta-name" style="font-weight: 700; font-size: 1rem; margin-bottom: 2px; color: var(--color-dark);">{name}</div>
+          <p style="margin: 0; font-size: 0.85rem; color: var(--color-text-muted);">{location}</p>
          </div>
         </div>
        </div>
@@ -249,7 +249,7 @@ __MAIN_CONTENT__
      </p>
     </div>
     <div>
-     <h4>Quick Links</h4>
+     <h3>Quick Links</h3>
      <ul class="footer-links">
       <li><a href="__PREFIX__">Home</a></li>
       <li><a href="__PREFIX__services/">Services</a></li>
@@ -258,7 +258,7 @@ __MAIN_CONTENT__
      </ul>
     </div>
     <div class="footer-contact">
-     <h4>Contact Us</h4>
+     <h3>Contact Us</h3>
      <p><i class="fas fa-phone-alt"></i>208-417-7993</p>
      <p><i class="fas fa-envelope"></i>info@treeservicepocatelloidaho.com</p>
      <p><i class="fas fa-map-marker-alt"></i>Pocatello, ID</p>
@@ -511,7 +511,7 @@ __QUALITY_PARAGRAPHS__
     <section class="section" style="background-color: var(--color-white); border-top: 1px solid var(--color-light-gray); border-bottom: 1px solid var(--color-light-gray);">
      <div class="container">
       <div class="text-center" style="max-width: 700px; margin: 0 auto var(--spacing-lg) auto;">
-       <h2>Our Professional Tree Services</h2>
+       <h2>Our Professional Pocatello Tree Services</h2>
        <p class="text-muted">
         We offer comprehensive residential and commercial tree services in the Bannock County area.
        </p>
@@ -579,7 +579,7 @@ __ABOUT_POCATELLO_PARAGRAPHS__
     <section class="section container" id="call-cta">
      <div class="bg-primary text-center" style="padding: var(--spacing-lg) var(--spacing-md); border-radius: var(--radius-lg); color: var(--color-white); background: linear-gradient(135deg, var(--color-primary), var(--color-dark)); box-shadow: var(--shadow-md);">
       <span class="badge" style="background-color: rgba(255,255,255,0.2); color: var(--color-white); margin-bottom: var(--spacing-xs);"><i class="fas fa-phone-alt"></i> Free Estimate via Phone</span>
-      <h2 style="color: var(--color-white); margin-top: 0; font-size: 2.25rem;">Get Your Free Local Tree Service Estimate</h2>
+      <h2 style="color: var(--color-white); margin-top: 0; font-size: 2.25rem;">Get Your Free Pocatello Tree Service Estimate</h2>
       <p style="color: rgba(255,255,255,0.9); max-width: 600px; margin: var(--spacing-sm) auto var(--spacing-md) auto; font-size: 1.1rem; line-height: 1.6;">
        Speak directly with our expert arborist. We provide free site inspections, hazard evaluations, and transparent cost breakdowns over the phone.
       </p>
@@ -596,7 +596,7 @@ __ABOUT_POCATELLO_PARAGRAPHS__
     <section class="section" style="background-color: var(--color-white); border-top: 1px solid var(--color-light-gray); border-bottom: 1px solid var(--color-light-gray);">
      <div class="container">
       <div class="text-center" style="max-width: 700px; margin: 0 auto var(--spacing-lg) auto;">
-       <h2>Read What Our Clients Say</h2>
+       <h2>Client Reviews for Pocatello Tree Service</h2>
        <p class="text-muted">
         Real reviews from local property owners in Southeast Idaho.
        </p>
@@ -622,7 +622,7 @@ __SERVING_AREA_ITEMS__
     <!-- FAQ Section -->
     <section class="section container" style="border-top: 1px solid var(--color-light-gray);">
      <div class="text-center" style="max-width: 700px; margin: 0 auto var(--spacing-lg) auto;">
-      <h2>Frequently Asked Questions</h2>
+      <h2>Frequently Asked Questions About Pocatello Tree Service</h2>
       <p class="text-muted">Common questions about our tree services in Pocatello.</p>
      </div>
 __FAQS__
@@ -639,7 +639,7 @@ __FAQS__
      </p>
     </div>
     <div>
-     <h4>Quick Links</h4>
+     <h3>Quick Links</h3>
      <ul class="footer-links">
       <li><a href="/">Home</a></li>
       <li><a href="/services/">Services</a></li>
@@ -648,7 +648,7 @@ __FAQS__
      </ul>
     </div>
     <div class="footer-contact">
-     <h4>Contact Us</h4>
+     <h3>Contact Us</h3>
      <p><i class="fas fa-phone-alt"></i>208-417-7993</p>
      <p><i class="fas fa-envelope"></i>info@treeservicepocatelloidaho.com</p>
      <p><i class="fas fa-map-marker-alt"></i>Pocatello, ID</p>
@@ -813,9 +813,8 @@ def redesign_homepage(original_path, output_path):
     hero_card_title = "Call For A Free Quote!"
     hero_card_text = "Speak directly with our local arborist for transparent phone pricing."
     
-    # Intro
     h2_intro = content_area.find(lambda t: t.name == 'h2' and 'Tree Service Near You' in t.text)
-    intro_title = clean_text(h2_intro.text) if h2_intro else "Tree Service Near You !"
+    intro_title = "Local Tree Service Near You in Pocatello, ID"
     
     intro_paragraphs_html = ""
     if h2_intro:
@@ -853,9 +852,8 @@ def redesign_homepage(original_path, output_path):
       </div>
 """
             
-    # Quality Section
     quality_heading = content_area.find(lambda tag: tag.name in ['h1', 'h2', 'h3', 'h4'] and "pick a quality tree service" in tag.get_text().lower())
-    quality_title = clean_text(quality_heading.text) if quality_heading else "Why is it necessary to pick a quality tree service company?"
+    quality_title = "Why Pick a Quality Pocatello Tree Service Company?"
     
     quality_paragraphs_html = ""
     if quality_heading:
@@ -907,7 +905,7 @@ def redesign_homepage(original_path, output_path):
 
     # Residential And Commercial
     res_heading = content_area.find(lambda tag: tag.name in ['h1', 'h2', 'h3', 'h4'] and "Residential And Commercial Tree Service" in tag.get_text())
-    residential_title = clean_text(res_heading.text) if res_heading else "Residential And Commercial Tree Service:"
+    residential_title = "Pocatello Residential & Commercial Tree Services"
     residential_paragraphs_html = ""
     if res_heading:
         res_p = res_heading.find_next('p')
@@ -916,7 +914,7 @@ def redesign_homepage(original_path, output_path):
             
     # About Pocatello Idaho
     about_poc_p = content_area.find(lambda tag: tag.name == 'p' and "About Pocatello, Idaho :" in tag.get_text())
-    about_pocatello_title = clean_text(about_poc_p.text) if about_poc_p else "About Pocatello, Idaho :"
+    about_pocatello_title = "About Pocatello, Idaho"
     about_pocatello_paragraphs_html = ""
     if about_poc_p:
         desc_p = about_poc_p.find_next('p')
@@ -975,7 +973,7 @@ def redesign_homepage(original_path, output_path):
             n_desc = n_text.replace(n_term, "").strip().lstrip(':- ')
             serving_area_items_html += f"""
        <div class="card" style="padding: var(--spacing-sm) var(--spacing-md); border-left: 4px solid var(--color-primary);">
-        <h4 style="margin: 0 0 4px 0; color: var(--color-dark);">{n_name}</h4>
+         <h3 style="margin: 0 0 4px 0; font-size: 1.15rem; color: var(--color-dark);">{n_name}</h3>
         <p style="margin: 0; font-size: 0.95rem; color: var(--color-text-muted);">{n_desc}</p>
        </div>
 """
