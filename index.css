@@ -1010,3 +1010,49 @@ textarea.form-control {
   height: 100%;
   border: none;
 }
+
+/* --- Mobile Sticky Call Bar --- */
+.mobile-call-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  text-align: center;
+  z-index: 9999;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.mobile-call-bar i {
+  margin-right: 8px;
+  animation: pulse-phone 1.5s infinite;
+}
+.mobile-call-bar.emergency-bar {
+  background-color: var(--color-error);
+}
+@keyframes pulse-phone {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+@media (min-width: 768px) {
+  .mobile-call-bar {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  body {
+    padding-bottom: 60px !important;
+  }
+}
