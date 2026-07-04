@@ -79,8 +79,8 @@ def optimize_seo():
             src = img.get('src', '')
             # If it is the main navbar logo
             if "logo_-120x120.png" in src or "logo_.png" in src:
-                img['width'] = "48"
-                img['height'] = "48"
+                img['width'] = "56"
+                img['height'] = "56"
                 # Navbar logo should load eagerly for LCP
                 img['loading'] = "eager"
             else:
