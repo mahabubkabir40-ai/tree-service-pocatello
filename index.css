@@ -7,8 +7,8 @@
 /* --- Design Tokens --- */
 :root {
   /* Color Palette */
-  --color-primary: #6A961F;          /* Brand Accent Green */
-  --color-primary-hover: #557918;
+  --color-primary: #557918;          /* Brand Accent Green */
+  --color-primary-hover: #435F12;
   --color-secondary: #BCBA63;        /* Mossy Accent Gold */
   --color-dark: #202714;             /* Deep Forest Green */
   --color-dark-hover: #14190d;
@@ -234,7 +234,7 @@ p:last-child {
 
 .badge-gold {
   background-color: rgba(188, 186, 159, 0.15);
-  color: #a38d17;
+  color: #705e04;
 }
 
 /* --- Header / Navigation --- */
