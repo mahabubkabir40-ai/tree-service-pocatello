@@ -1057,7 +1057,7 @@ def redesign_subpage(original_path, prefix, is_contact=False, is_privacy=False):
     title, meta_tags, canonical, schema = extract_metadata(soup)
     
     rel_path = ""
-    for k in SEO_OVERRIDES.keys():
+    for k in sorted(SEO_OVERRIDES.keys(), key=len, reverse=True):
         if k in original_path.replace('\\', '/'):
             rel_path = k
             break
