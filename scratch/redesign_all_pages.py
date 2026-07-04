@@ -164,10 +164,9 @@ __SCHEMA__
   <!-- Header / Navigation -->
   <header class="header-wrapper">
    <div class="container navbar">
-    <a class="logo-link" href="__PREFIX__">
-     <img alt="Pocatello Tree Service Logo" src="__PREFIX__wp-content/uploads/2021/04/Tree-Service-Pocatello.logo_-120x120.png" style="width: 48px; height: 48px; object-fit: contain;"/>
-     <span class="logo-text">Pocatello<span> Tree</span></span>
-    </a>
+     <a class="logo-link" href="__PREFIX__">
+      <img alt="Pocatello Tree Service Logo" src="__PREFIX__wp-content/uploads/2021/04/Tree-Service-Pocatello.logo_-120x120.png" style="width: 48px; height: 48px; object-fit: contain;"/>
+     </a>
     
     <nav>
      <ul class="nav-menu">
@@ -382,10 +381,9 @@ __SCHEMA__
   <!-- Header / Navigation -->
   <header class="header-wrapper">
    <div class="container navbar">
-    <a class="logo-link" href="/">
-     <img alt="Pocatello Tree Service Logo" src="wp-content/uploads/2021/04/Tree-Service-Pocatello.logo_-120x120.png" style="width: 48px; height: 48px; object-fit: contain;"/>
-     <span class="logo-text">Pocatello<span> Tree</span></span>
-    </a>
+     <a class="logo-link" href="/">
+      <img alt="Pocatello Tree Service Logo" src="wp-content/uploads/2021/04/Tree-Service-Pocatello.logo_-120x120.png" style="width: 48px; height: 48px; object-fit: contain;"/>
+     </a>
     
     <nav>
      <ul class="nav-menu">
