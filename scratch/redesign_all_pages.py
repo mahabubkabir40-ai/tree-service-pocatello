@@ -11,36 +11,10 @@ def clean_element(element):
         
     classes = element.get('class', []) if not isinstance(element, str) else []
     if any('accordion' in cls for cls in classes):
-        items = element.find_all(class_='elementor-accordion-item')
-        if items:
-            accordion_html = '<div class="accordion-wrapper">\n'
-            for idx, item in enumerate(items):
-                title_a = item.find(class_='elementor-accordion-title')
-                if not title_a:
-                    continue
-                title_text = title_a.get_text().strip()
-                
-                content_div = item.find(class_='elementor-tab-content')
-                if not content_div:
-                    continue
-                
-                cleaned_content = ""
-                for child in content_div.children:
-                    cleaned_content += clean_element(child)
-                cleaned_content = cleaned_content.strip()
-                
-                accordion_html += f'  <div class="accordion-item">\n'
-                accordion_html += f'    <button class="accordion-title" aria-expanded="false" aria-controls="faq-content-{idx+1}">\n'
-                accordion_html += f'      <span>{title_text}</span>\n'
-                accordion_html += f'      <span class="accordion-icon"><i class="fas fa-chevron-down"></i></span>\n'
-                accordion_html += f'    </button>\n'
-                accordion_html += f'    <div class="accordion-content" id="faq-content-{idx+1}">\n'
-                indented_content = "\n".join("      " + line for line in cleaned_content.splitlines())
-                accordion_html += f'{indented_content}\n'
-                accordion_html += f'    </div>\n'
-                accordion_html += f'  </div>\n'
-            accordion_html += '</div>\n'
-            return accordion_html
+        return ""
+        
+    if element.name in {'h1', 'h2', 'h3', 'h4', 'h5', 'h6'} and "Questions &" in element.get_text():
+        return ""
 
     if element.name == 'h5':
         return ""
@@ -811,6 +785,57 @@ SEO_OVERRIDES = {
     }
 }
 
+SUBPAGE_FAQS = {
+    "tree-removal/index.html": [
+        ("How much does tree removal cost in Pocatello?",
+         "On average, tree removal in Pocatello, ID ranges from $450 to $1,500 depending on the tree's height, location, and structural complexity. Hard-to-reach removals near power lines or structures require advanced rigging and crane support, which may increase the cost."),
+        ("Do I need a permit to remove a tree in Pocatello?",
+         "In most cases, residential properties in Pocatello do not require a permit for tree removal on private land. However, trees located in public rights-of-way or designated city easements require municipal approval before any removal or trimming work begins."),
+        ("How do you remove tree roots and prevent regrowth?",
+         "We excavate the primary root ball during the tree removal process and use a commercial stump grinder to grind the remaining roots 6 to 12 inches below grade. This effectively prevents regrowth and allows you to replant or lay sod.")
+    ],
+    "tree-trimming/index.html": [
+        ("What is the best time of year to trim trees in Pocatello?",
+         "The ideal time for major pruning and tree trimming in Southeast Idaho is during late winter or early spring (dormant season). Trimming during this period minimizes sap loss, reduces disease transmission, and promotes rapid new growth in spring."),
+        ("How often should trees be trimmed or pruned?",
+         "Most mature shade trees in Pocatello benefit from professional trimming every 3 to 5 years. Younger trees may need pruning every 2 to 3 years to establish a strong structural framework and correct narrow branch angles."),
+        ("What is the difference between tree trimming and pruning?",
+         "Tree trimming focuses primarily on aesthetics, balancing the canopy, and clearing boundaries (like roofs or driveways). Pruning is a specialized arborist technique focused on the biological health, structural integrity, and removal of dead or diseased limbs.")
+    ],
+    "stump-removal-grinding/index.html": [
+        ("What is the difference between stump removal and stump grinding?",
+         "Stump removal involves physically excavating the entire root ball out of the ground, which leaves a large hole. Stump grinding uses a heavy-duty rotary wheel to pulverize the stump into wood chips 6 to 12 inches below the surface, which is less invasive and more cost-effective."),
+        ("How deep do you grind a tree stump?",
+         "We typically grind stumps 6 to 12 inches below ground level. This depth is ideal for laying topsoil, seeding lawn, or installing new sod. If you plan to replant a new tree, we can grind deeper upon request."),
+        ("What happens to the wood chips after stump grinding?",
+         "Stump grinding produces a mixture of wood chips and soil. We backfill the hole with this mulch mixture to settle naturally. Any excess chips can be kept for landscaping mulch, or we can haul them away for you upon request.")
+    ],
+    "cabling-bracing/index.html": [
+        ("How does tree cabling and bracing protect mature trees?",
+         "Cabling and bracing provide flexible structural support by installing high-strength steel cables and threaded rods in co-dominant stems. This limits limb movement during heavy high-desert windstorms or snow loads, preventing splits and extending the tree's lifespan."),
+        ("Can cabling and bracing save a split or cracked tree?",
+         "Yes, if the split is caught early and the tree is otherwise healthy, cabling and bracing can stabilize the structural crack, allowing the tree to compartmentalize and heal the wound while maintaining its safety."),
+        ("How long do tree cables and rods last?",
+         "Standard steel cables and hardware last 10 to 15 years. However, because trees grow and wind stresses change, we recommend having your structural support systems inspected by a professional arborist every 1 to 2 years.")
+    ],
+    "shrub-removal/index.html": [
+        ("Why should I hire a professional for shrub and hedge removal?",
+         "Mature shrubs and hedges have dense, sprawling root systems that are difficult to excavate by hand. Professionals use heavy-duty root extractors and stump grinders to remove the entire root ball, preventing regrowth and preparing the soil for landscaping."),
+        ("Can overgrown shrubs damage my home's foundation?",
+         "Yes, certain fast-growing shrubs planted too close to a house can retain moisture against the foundation, crack walkways, and clog drainage pipes. Removing overgrown shrubs protects your structural investments."),
+        ("When is the best time of year to remove overgrown hedges?",
+         "Hedges and shrubs can be safely removed at any time of the year. However, late fall or early spring is often preferred because the surrounding soil is easier to dig, and it minimizes damage to adjacent lawn and plantings.")
+    ],
+    "emergency-tree-services/index.html": [
+        ("What constitutes a tree emergency?",
+         "A tree emergency includes fallen trees or limbs blocking driveways, trees resting on utility lines, split trunks threatening to collapse on structures, or storm-damaged branches hanging precariously over public walkways."),
+        ("How quickly can you respond to an emergency tree service call?",
+         "We offer 24/7 rapid mobilization for storm damage and tree emergencies in Pocatello and Chubbuck. Our crew typically dispatches immediately and arrives on-site within 1 to 2 hours of your call."),
+        ("Will insurance cover the cost of emergency tree removal?",
+         "Most homeowners insurance policies cover emergency tree removal if a tree falls due to a storm or natural event and damages an insured structure (like a house or fence). We provide detailed digital documentation to help support your insurance claim.")
+    ]
+}
+
 def redesign_homepage(original_path, output_path):
     print(f"Redesigning Homepage: {original_path} -> {output_path}")
     with open(original_path, 'r', encoding='utf-8') as f:
@@ -1059,6 +1084,23 @@ def redesign_subpage(original_path, prefix, is_contact=False, is_privacy=False):
     else:
         cleaned_content = "<p>Content not found.</p>"
         
+    faq_html = ""
+    if rel_path in SUBPAGE_FAQS:
+        faqs = SUBPAGE_FAQS[rel_path]
+        faq_html += '<h2>Questions &amp; Answers</h2>\n'
+        faq_html += '<div class="accordion-wrapper">\n'
+        for idx, (q, a) in enumerate(faqs):
+            faq_html += f'  <div class="accordion-item">\n'
+            faq_html += f'    <button class="accordion-title" aria-expanded="false" aria-controls="faq-content-{idx+1}">\n'
+            faq_html += f'      <span>{q}</span>\n'
+            faq_html += f'      <span class="accordion-icon"><i class="fas fa-chevron-down"></i></span>\n'
+            faq_html += f'    </button>\n'
+            faq_html += f'    <div class="accordion-content" id="faq-content-{idx+1}">\n'
+            faq_html += f'      <p>{a}</p>\n'
+            faq_html += f'    </div>\n'
+            faq_html += f'  </div>\n'
+        faq_html += '</div>\n'
+
     # Choose Layout
     main_section_content = ""
     
@@ -1123,6 +1165,7 @@ def redesign_subpage(original_path, prefix, is_contact=False, is_privacy=False):
      <!-- Main Content Area -->
      <article class="content-area">
 {cleaned_content}
+{faq_html}
        
        <!-- Premium Callout Banner -->
        <div class="callout-banner text-center" style="background-color: var(--color-light); border-left: 4px solid var(--color-primary); padding: var(--spacing-md) var(--spacing-lg); border-radius: var(--radius-md); margin-top: var(--spacing-lg); box-shadow: var(--shadow-soft);">
