@@ -6,7 +6,57 @@
       "permanent": true
     },
     {
+      "source": "/tree-service-caldwell-idaho/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/tree service caldwell idaho",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/tree service caldwell idaho/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/tree%20service%20caldwell%20idaho",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/tree%20service%20caldwell%20idaho/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
       "source": "/tree-service-twin-falls",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/tree-service-twin-falls/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/tree service twin falls",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/tree service twin falls/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/tree%20service%20twin%20falls",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/tree%20service%20twin%20falls/",
       "destination": "/",
       "permanent": true
     }
