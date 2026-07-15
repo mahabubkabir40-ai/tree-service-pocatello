@@ -6,6 +6,7 @@ This file documents the workspace rules and project facts for **Pocatello Tree S
 * **No Google Business Profile (GBP):** This business does not have a Google Business Profile. All lead generation relies 100% on organic website SEO search rankings.
 * **GSC Country Filter:** Always filter Search Console API ranking queries by the United States only (`usa` ISO code).
 * **Brand Keyword Avoidance:** Do not target the keyword "Top Notch" directly on main pages, as it belongs to a defunct competitor brand.
+* **Browser Cold Calling Preference:** Always use the Twilio Dev Phone browser-based dialer (`twilio dev-phone`) for outbound cold calls. Do not use Python call bridging scripts.
 
 ## Business Details (NAP)
 * **Name:** Pocatello Tree Service
